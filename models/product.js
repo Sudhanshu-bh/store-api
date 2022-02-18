@@ -17,8 +17,8 @@ const productSchema = new mongoose.Schema({
   rating: {
     type: Number,
     default: 4.5,
-    min: 0,
-    max: 5,
+    min: [0, "Rating cannot be less than 0"],
+    max: [5, "Rating cannot be greater than 5"],
   },
   createdAt: {
     type: Date,
